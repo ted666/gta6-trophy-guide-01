@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Trophy Atlas — GTA VI 55-Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Every PlayStation 5 trophy for Grand Theft Auto VI: official names, descriptions and grades, cited guides, a roadmap to the platinum, missable flags, and an offline progress tracker that saves in your browser.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>Vice City Trophy Atlas</h1>
+    <p class="sub">All 55 trophies &mdash; cited guides, a roadmap to the platinum, and a tracker that saves in your browser.</p>
+  </div>
+  <div class="hero-progress" aria-label="Overall trophy progress">
+    <p class="big"><span id="earnedCount">0</span><span class="of"> / 55</span></p>
+    <p class="hero-label">trophies earned &middot; <span id="earnedPct">0%</span></p>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="overallBar"><div class="fill" id="overallFill" style="width:0%"></div></div>
+    <p class="grades" id="gradeLine"></p>
+    <p class="hero-note">55 trophies &middot; 1 platinum, 2 gold, 6 silver, 46 bronze &middot; 28 hidden &middot; 1 missable &middot; no online trophies</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <a href="#checklist" data-tab="checklist" class="active">Checklist</a>
+  <a href="#roadmap" data-tab="roadmap">Roadmap</a>
+  <a href="#missables" data-tab="missables">Missables</a>
+  <a href="#sources" data-tab="sources">Sources</a>
+</nav>
+
+<main>
+  <section id="tab-checklist" class="tabpage active">
+    <div class="controls" role="search">
+      <input id="search" type="search" placeholder="Search a trophy name or guide&hellip;" aria-label="Search trophies" autocomplete="off">
+      <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+        <button data-kind="all" class="chip active">All</button>
+        <button data-kind="story" class="chip">Story</button>
+        <button data-kind="missable" class="chip">Missable</button>
+        <button data-kind="collectibles" class="chip">Collectibles</button>
+        <button data-kind="activities" class="chip">Activities</button>
+        <button data-kind="online" class="chip">Online</button>
+      </div>
+      <div class="chips" id="gradeChips" role="group" aria-label="Filter by grade">
+        <button data-grade="all" class="chip active">Any grade</button>
+        <button data-grade="platinum" class="chip">Platinum</button>
+        <button data-grade="gold" class="chip">Gold</button>
+        <button data-grade="silver" class="chip">Silver</button>
+        <button data-grade="bronze" class="chip">Bronze</button>
+      </div>
+      <div class="toggles">
+        <label class="toggle"><input type="checkbox" id="hideEarned"> Hide earned</label>
+        <label class="toggle"><input type="checkbox" id="spoilerToggle"> Spoiler-safe mode</label>
+        <button id="themeToggle" class="btn small" type="button">Night theme</button>
+      </div>
+      <div class="io">
+        <button id="exportBtn" class="btn" type="button">Export progress</button>
+        <button id="importBtn" class="btn" type="button">Import progress</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+        <button id="resetBtn" class="btn danger" type="button">Reset progress</button>
+        <button id="demoBtn" class="btn" type="button">Load sample progress</button>
+      </div>
+      <p class="controls-note">Progress, counters and notes save in this browser only (localStorage). Nothing leaves your machine.</p>
+      <p class="countline" id="countLine" aria-live="polite"></p>
+    </div>
+
+    <div id="nextUp" class="nextup" aria-label="Next up planner"></div>
+
+    <div class="layout">
+      <ul id="list" class="trophy-list"></ul>
+      <aside id="detail" class="detail" aria-live="polite">
+        <p class="detail-empty">Pick a trophy on the left to read its guide, sources and step count.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tab-roadmap" class="tabpage">
+    <h2>Roadmap to the platinum</h2>
+    <p class="lede">Around 200 hours in total, 4/10 difficulty (PowerPyx). One playthrough, no online trophies, free roam after the story. Do it in three stages &mdash; story first, then the 100% checklist, then character quests and the five unknown trophies.</p>
+    <div id="roadmapStages"></div>
+    <h3>Before you start</h3>
+    <ul class="tips">
+      <li><strong>Keep a save at the start and end of every chapter</strong> (10 saves). The game gives you 15 manual save slots plus 1 autosave &mdash; rotate the other 5 (PowerPyx).</li>
+      <li><strong>The one missable trophy is Positive Mental Attitude.</strong> Meditate with Lucia on Jason&rsquo;s balcony in Chapter 1, after &ldquo;Down to Earth&rdquo;. After Chapter 1 it is gone for good.</li>
+      <li><strong>Cheats disable trophies and saving.</strong> There are 61 cheats; none work before the credits, and the block lasts for the current session (GTABase via PowerPyx).</li>
+      <li><strong>No mission replay.</strong> You cannot replay a story mission, so finish side tasks as you go &mdash; but free roam after the story covers almost everything.</li>
+      <li><strong>Turn on Criminal Profile notifications</strong> (Settings &gt; UI &gt; HUD Notifications &gt; Criminal Profile = On) so Actions Speak Louder progress is visible.</li>
+    </ul>
+  </section>
+
+  <section id="tab-missables" class="tabpage">
+    <h2>Missable trophies</h2>
+    <p class="lede">Only one trophy in the whole list can be missed. Everything else stays available in free roam after the story.</p>
+    <div id="missableList"></div>
+    <h3>Not missable &mdash; but don&rsquo;t panic</h3>
+    <ul class="tips">
+      <li><strong>Kenton (shipwrecks)</strong> goes quiet after Chapter 1, but returns in Chapters 2&ndash;3.</li>
+      <li><strong>Kingpin Bowling valuables</strong> respawn &mdash; if you miss one, go back later.</li>
+      <li><strong>Chapter trophies</strong> pop after the first mission of the next chapter &mdash; that is normal, not a bug.</li>
+      <li><strong>Andy, Billy, Randy, Tyrone, Bret</strong> questlines are all still open after the story.</li>
+    </ul>
+  </section>
+
+  <section id="tab-sources" class="tabpage">
+    <h2>Sources &amp; how this guide was made</h2>
+    <p class="lede">Every trophy&rsquo;s guide names the source its facts come from, beside the guide. This page lists them all.</p>
+    <div id="sourceList"></div>
+    <h3>Honesty note</h3>
+    <p>The game launched 19 November 2026, the day before this guide was written. Five trophies still have no confirmed method &mdash; they are marked <span class="tag unknown">method not yet known</span> in the checklist and their guides say so plainly, with the community&rsquo;s best guess labelled as a guess. Nothing was invented for them. Trophies marked <span class="tag verified">verified</span> have a confirmed method from the sources below. Official trophy names, descriptions and grades are shown exactly as PlayStation publishes them; the guides themselves are written for this entry in our own words &mdash; sources are cited, never copied.</p>
+    <h3>Key</h3>
+    <ul class="tips">
+      <li><span class="sw platinum"></span> Platinum &mdash; 1</li>
+      <li><span class="sw gold"></span> Gold &mdash; 2</li>
+      <li><span class="sw silver"></span> Silver &mdash; 6</li>
+      <li><span class="sw bronze"></span> Bronze &mdash; 46</li>
+      <li><span class="tag hidden">hidden</span> &mdash; the name and description are hidden on PlayStation until it is earned (28 trophies).</li>
+      <li><span class="tag missable">missable</span> &mdash; can be missed in one playthrough (1 trophy).</li>
+      <li><span class="tag verified">verified</span> &mdash; method confirmed by a cited guide.</li>
+      <li><span class="tag unknown">method not yet known</span> &mdash; no confirmed method yet (5 trophies).</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. Trophy names and descriptions are shown as PlayStation publishes them; all guides are written for this entry and cite their sources. Works fully offline &mdash; no network requests, no tracking.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
